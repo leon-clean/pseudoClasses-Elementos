@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Pseudo-Classes</title>
+    <style>
+        /* Estilo básico para todos os elementos */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Pseudo-classe :link e :visited */
+        a:link {
+            color: blue;
+        }
+
+        a:visited {
+            color: purple;
+        }
+
+        /* Pseudo-classe :hover */
+        a:hover {
+            color: red;
+        }
+
+        /* Pseudo-classe :active */
+        a:active {
+            color: orange;
+        }
+
+        /* Pseudo-classe :focus */
+        input:focus {
+            border: 2px solid green;
+        }
+
+        /* Pseudo-classe :first-child */
+        div p:first-child {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Pseudo-classe :last-child */
+        div p:last-child {
+            color: blue;
+            font-style: italic;
+        }
+
+        /* Pseudo-classe :nth-child() */
+        ul li:nth-child(odd) {
+            background-color: #f0f0f0;
+        }
+
+        ul li:nth-child(even) {
+            background-color: #e0e0e0;
+        }
+
+        /* Pseudo-classe :nth-of-type() */
+        p:nth-of-type(1) {
+            color: darkgreen;
+        }
+
+        p:nth-of-type(2) {
+            color: darkred;
+        }
+
+        /* Pseudo-classe :not() */
+        p:not(:first-of-type) {
+            color: gray;
+        }
+
+        /* Pseudo-classe :checked */
+        input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+        }
+
+        /* Pseudo-classe :disabled */
+        input:disabled {
+            background-color: #d3d3d3;
+        }
+
+        /* Pseudo-classe :enabled */
+        input:enabled {
+            background-color: white;
+        }
+
+        /* Pseudo-classe :empty */
+        p:empty {
+            display: none;
+        }
+
+        /* Pseudo-classe :target */
+        #section1:target {
+            background-color: yellow;
+        }
+
+        /* Pseudo-classe :lang */
+        [lang="pt"] {
+            background-color: lightcoral;
+        }
+
+        [lang="en"] {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste de Pseudo-Classes CSS</h1>
+
+    <!-- Links para testar :link, :visited, :hover, :active -->
+    <a href="#section1">Ir para a Seção 1</a> |
+    <a href="#section2">Ir para a Seção 2</a>
+
+    <br><br>
+
+    <!-- Seções para :target -->
+    <div id="section1" style="padding: 10px; margin: 10px; border: 1px solid black;">
+        <h2>Seção 1</h2>
+        <p>Este é o primeiro parágrafo da Seção 1.</p>
+        <p>Este é o segundo parágrafo da Seção 1.</p>
+    </div>
+
+    <div id="section2" style="padding: 10px; margin: 10px; border: 1px solid black;">
+        <h2>Seção 2</h2>
+        <p lang="pt">Este parágrafo está em português.</p>
+        <p lang="en">This paragraph is in English.</p>
+    </div>
+
+    <br>
+
+    <!-- Lista para testar :nth-child() e :nth-of-type() -->
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+    </ul>
+
+    <br>
+
+  
+    <input type="checkbox" id="checkbox1">
+    <label for="checkbox1">Marque-me</label>
+
+    <input type="text" value="Campo habilitado">
+    <input type="text" value="Campo desabilitado" disabled>
+
+    <br>
+
+    
+    <p>Não estou vazio.</p>
+    <p></p> 
+
+    <br>
+
+    
+    <p>Não sou o primeiro parágrafo desta <div>.</p>
+    <p>Sou o primeiro parágrafo desta <div>.</p>
+
+</body>
+</html>
